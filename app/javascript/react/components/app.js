@@ -1,10 +1,14 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import Home from '../containers/home';
 import Artworks from '../containers/artworks';
 import Show from './Show';
 import Story from '../containers/Story'
 export const App = (props) => {
+  ReactGA.initialize('ENV["GOOGLE-TRACKING"]');
+    ReactGA.pageview(window.location.pathname);
+
   return (
     <BrowserRouter>
       <div>
