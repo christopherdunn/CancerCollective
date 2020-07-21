@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
 import HomeTile from '../components/HomeTile';
-import SlideTile from '../components/SlideTile';
 import toplay from '../../../assets/images/toplay.jpg';
+import hero from '../../../assets/images/Colored-Pencils.jpg';
 
 class welcome extends Component {
 
   render() {
     return (
       <div>
-      <div className="slider">
-      <SlideTile image='https://tcc2-development.s3.amazonaws.com/uploads/artwork/art_photo/18/Image34.png' />
+        <div className="hero">
+            <img className='hero-image' src={hero} height='80%'/>
+          <div className="artists">
+            <h2>Where Cancer Patients Become Artists</h2>
+            <p>The Cancer Collective is the place for cancer patients and hospitals 
+              engaged in art therapy to showcase their artistic talents and works.</p>
+              <a href='/artworks'><button className='hero-button red-button'>See The Art</button></a>
+          </div>
         </div>
+      
         
         <div className="toplay">
           <img src={toplay} height='100vw'/>
           <div className="doers">
             <h2>No matter the tool we support the Artists</h2>
             <p>Whether you like to draw, paint, take photos or sculpt, we are here to showcase your journey.
-              For the many forms of cancers there are just as many forms of art and we're here to help share your talents with the world.
+              Just as there are many forms of cancer, there are just as many forms of art and we're here to help share your talents with the world.
             </p>
           </div>
           
