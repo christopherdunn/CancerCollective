@@ -139,7 +139,7 @@
   color: #FF474C;
   border-width: 2px;
   border: solid;
-
+  white-space: normal;
   text-align: center;
 }
 .formfields{
@@ -178,6 +178,7 @@
 }
 
 .ArtMain ul {
+  padding-top: 1rem;
   justify-content:space-evenly;
   display: flex;
   flex-wrap: wrap;
@@ -260,6 +261,7 @@
   position: relative;
   text-align: center;
   width: 100%;
+  color: black;
 
 }
 
@@ -268,8 +270,70 @@
   top: 85px;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: black;
+  
 
+}
+.doers h1,h2,h3{
+  color: black;
 }
 .doers p{
   padding-top: 1rem;
+  color: black;
+}
+.hero {
+  padding-top: 1rem;
+  position: relative;
+  text-align: center;
+  color: black;
+  
+}
+.hero-image{
+  height: 100vh;
+  width: 100vw;
+}
+.artists{
+  padding-top: 1rem;
+  position: absolute;
+  top: 205px;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+.artists h1, h2, h3{
+  color: #FF474C;
+  white-space: nowrap;
+
+}
+.artists p {
+  color: #FF474C;
+}
+.artists a :hover {
+  background-color: #FF474C;
+  color: white;
+}
+.hero-button {
+  background-color: #FF474C;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.red-button {
+  background-color: white; 
+  color: #FF474C; 
+  border: 2px solid #FF474C;
+  border-radius: 8px;
+}
+.hero-button :hover{
+  background-color: #FF474C;
+  color: white;
+}
+.button a :hover{
+  background-color: #FF474C;
+  color: white;
 }
