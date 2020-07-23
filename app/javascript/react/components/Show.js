@@ -32,7 +32,7 @@ class Show extends Component {
     if(isArtStatement!== null || '' ){
       statement = <div>About this Piece: <br/>{this.state.artwork.art_statement}</div>;
     } else {
-      <div></div>
+      statement = <div></div>
     }
     return(
       <div className="show">
