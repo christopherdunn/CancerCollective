@@ -29,7 +29,7 @@ class Show extends Component {
     const isArtStatement = this.state.artwork.art_statement;
     let statement;
 
-    if(isArtStatement!= null || '' ){
+    if(isArtStatement!== null || '' ){
       statement = <div>About this Piece: <br/>{this.state.artwork.art_statement}</div>;
     } else {
       <div></div>
