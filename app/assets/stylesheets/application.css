@@ -67,6 +67,7 @@
  .dashnav h3{
    text-align: center;
    user-select: none;
+   color: white;
 
  }
  .sidebar ul li{
@@ -85,6 +86,10 @@
  }
  .dashnav ul li:hover {
    padding-left: 30px;
+ }
+ .dashnav {
+   height: 100%;
+   background-color: #FF474C;
  }
  .dashnav ul{
 
@@ -185,6 +190,7 @@
 }
 
 .ArtTile {
+  margin-bottom: 1rem;
   padding: 1rem 1rem;
   color: #FAFAFA;
   border-width: 2px;

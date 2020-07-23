@@ -86,7 +86,7 @@ class FormContainer extends Component {
       city: '',
       state: [0],
       art_statement: '',
-      category: [0],
+      category: null,
       terms: false
     })
   }

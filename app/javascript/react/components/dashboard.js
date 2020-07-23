@@ -147,7 +147,7 @@ class dashboard extends Component {
         name={this.state.user.first_name}
         uploadClick={this.handleUploadsClick}
         formClick={this.handleFormClick}
-        />;
+        />
     </div>
     <div className="dash-center">
       {form}

@@ -19,7 +19,7 @@ class welcome extends Component {
         </div>
       
         
-        <div className="toplay">
+        {/* <div className="toplay">
           <img src={toplay} height='100vw'/>
           <div className="doers">
             <h2>No matter the tool we support the Artists</h2>
@@ -52,7 +52,7 @@ class welcome extends Component {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       </div>
     );
   }
