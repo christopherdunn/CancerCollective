@@ -33,7 +33,8 @@ class Api::V1::ArtworksController < ApplicationController
         user_id: current_user.id,
         art_statement: params[:art_statement],
         category: params[:category],
-        terms: params[:terms]
+        terms: params[:terms],
+        anonymous: params[:anonymous]
       )
 
 

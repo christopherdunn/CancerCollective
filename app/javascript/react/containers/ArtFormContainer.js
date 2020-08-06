@@ -24,6 +24,7 @@ class FormContainer extends Component {
       art_statement: '',
       category:'',
       hospital: {},
+      anonymous: false,
       terms: false
     }
     this.handleChange = this.handleChange.bind(this)
@@ -73,7 +74,7 @@ class FormContainer extends Component {
     this.setState({ 
       [name]: value
     })
-    console.log(this.state.terms)
+    
   }
 
   handleClearForm() {
@@ -87,6 +88,7 @@ class FormContainer extends Component {
       state: [0],
       art_statement: '',
       category: null,
+      anonymous: false,
       terms: false
     })
   }
@@ -113,6 +115,7 @@ class FormContainer extends Component {
       body.append("art_statement", this.state.art_statement)
       body.append("category", this.state.category)
       body.append("terms", this.state.terms)
+      body.append("anonymous", this.state.anonymous)
 
       fetch('/api/v1/artworks/', {
       credentials: 'same-origin',
@@ -181,6 +184,12 @@ class FormContainer extends Component {
         </aside>
       </section>
       <div className="formfields">
+      <Checkbox
+      name = 'anonymous'
+      checked = {this.state.anonymous}
+      label = 'Label Artist as Anonymous'
+      handleChange = {this.handleCheckboxChange}
+      />
       <Checkbox
       name = 'terms'
       checked = {this.state.terms}
