@@ -6,8 +6,9 @@ import Artworks from '../containers/artworks';
 import Show from './Show';
 import Story from '../containers/Story'
 export const App = (props) => {
-  ReactGA.initialize('ENV["GOOGLE-TRACKING"]');
-    ReactGA.pageview(window.location.pathname);
+  ReactGA.initialize('UA-173203075-2');
+    ReactGA.pageview(window.location.pathname +  
+                      window.location.search);
 
   return (
     <BrowserRouter>

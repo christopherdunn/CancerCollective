@@ -26,6 +26,14 @@ class Artworks extends Component {
       });
     }
     render() {
+      // const isAnonymous = {artwork.anonymous};
+      // let artist;
+      
+      // if(isAnonymous){
+      //   artist= "Anonymous";
+      // }else {
+      //   artist= artwork.first_name +' '+ artwork.last_name;
+      // }
       let artworks = this.state.artworks.map(artwork =>{
         return(
           <ArtTile
@@ -36,6 +44,7 @@ class Artworks extends Component {
             first_name={artwork.first_name}
             last_initial={artwork.last_name}
             hospital={artwork.hospital_name}
+            anonymous={artwork.anonymous}
             
           />
         )

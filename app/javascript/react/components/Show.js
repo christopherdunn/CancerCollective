@@ -26,7 +26,17 @@ class Show extends Component {
   }
 
   render() {
+    const isAnonymous = this.state.artwork.anonymous;
+    let artist;
+    
+    if(isAnonymous){
+      artist= "Anonymous";
+    }else {
+      artist= this.state.artwork.first_name +' '+ this.state.artwork.last_name;
+    }
+
     const isArtStatement = this.state.artwork.art_statement;
+    
     let statement;
 
     if(isArtStatement){
@@ -44,7 +54,7 @@ class Show extends Component {
       </div>
       <div className="showInfo">
       <div>Title: {this.state.artwork.title}</div>
-      <div>Artist: {this.state.artwork.first_name} {this.state.artwork.last_name}</div>
+    <div>Artist: {artist}</div>
       <div>Hospital: {this.state.artwork.hospital_name}</div>
       <div>City: {this.state.artwork.city}</div>
       <div>State: {this.state.artwork.state}</div>
