@@ -5,6 +5,7 @@ import StatementInputField from '../components/StatementInputField';
 import DropDownState from '../components/DropDownState';
 import DropDownCategory from '../components/DropDownCategory';
 import Checkbox from '../components/Checkbox';
+import TermsCheckbox from '../components/TandCbox';
 
 
 
@@ -25,13 +26,15 @@ class FormContainer extends Component {
       category:'',
       hospital: {},
       anonymous: false,
-      terms: false
+      terms: false,
+      errors: {}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleClearForm = this.handleClearForm.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
     this.getHospital = this.getHospital.bind(this)
+    this.handleValidate = this.handleValidate.bind(this)
   }
 
   componentDidMount() {
@@ -77,6 +80,17 @@ class FormContainer extends Component {
     
   }
 
+  handleValidate(){
+    if(this.state.terms !== true){
+      alert('You must agree to the terms and conditions.')
+      this.setState({errors: 'You must agree to the terms and conditions.'})
+      return false
+    } else {
+      return true
+    }
+
+  }
+
   handleClearForm() {
     this.setState({
       first_name: '',
@@ -97,13 +111,15 @@ class FormContainer extends Component {
   if(art_photo.length == 1) {
     this.setState({ art_photo });
   } else {
-    this.setState({ message: 'You can only upload one photo per piece of artwork.'})
+    this.setState({ message: 'You can only upload one photo per piece of artwork.'});
+    alert('You can only upload one photo per piece of artwork.')
   }
 }
 
   handleSubmit(event) {
     event.preventDefault();
-    let body = new FormData()
+    if(this.handleValidate(true)){
+      let body = new FormData()
       body.append("first_name", this.state.current_user.first_name)
       body.append("last_name", this.state.current_user.last_name)
       body.append("art_photo", this.state.art_photo[0])
@@ -129,6 +145,8 @@ class FormContainer extends Component {
         this.setState({ message: body.message })
       })
     this.handleClearForm()
+    }
+    
   }
 
   render(){
@@ -190,7 +208,7 @@ class FormContainer extends Component {
       label = 'Label Artist as Anonymous'
       handleChange = {this.handleCheckboxChange}
       />
-      <Checkbox
+      <TermsCheckbox
       name = 'terms'
       checked = {this.state.terms}
       label = 'I agree to the Terms and Conditions'
