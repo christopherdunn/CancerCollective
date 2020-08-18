@@ -181,6 +181,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+.footer a {
+  color: white;
+}
 
 .ArtMain ul {
   padding-top: 1rem;
@@ -342,4 +345,7 @@
 .button a :hover{
   background-color: #FF474C;
   color: white;
+}
+.terms {
+  width: 75vw;
 }
