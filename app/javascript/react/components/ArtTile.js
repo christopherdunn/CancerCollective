@@ -9,7 +9,7 @@ const ArtTile = (props) => {
       if(isAnonymous){
         artist= "Anonymous";
       }else {
-        artist= props.first_name +' '+ props.last_initial;
+        artist= props.first_name +' '+ props.last_initial.charAt(0)+'.';
        }
 
   return (
