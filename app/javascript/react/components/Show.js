@@ -4,13 +4,24 @@ class Show extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      artwork: {}
+      artwork: {},
+      
+     
+      
     }
     this.getArtwork = this.getArtwork.bind(this)
+    this.getInitial = this.getInitial.bind(this)
   }
   componentDidMount() {
     this.getArtwork();
+    this.getInitial();
+  }
 
+  getInitial(){
+    let initial = ''
+    let lastName = this.state.artwork.last_name
+    initial = lastName
+    
   }
 
   getArtwork() {
@@ -28,11 +39,17 @@ class Show extends Component {
   render() {
     const isAnonymous = this.state.artwork.anonymous;
     let artist;
+    let lastInitial;
+    const isLastName = this.state.artwork.last_name;
     
+    if(isLastName){
+      lastInitial = isLastName.charAt(0)+'.';
+    }
+
     if(isAnonymous){
       artist= "Anonymous";
     }else {
-      artist= this.state.artwork.first_name +' '+ this.state.artwork.last_name;
+      artist= this.state.artwork.first_name +' '+ lastInitial;
     }
 
     const isArtStatement = this.state.artwork.art_statement;
